@@ -53,6 +53,8 @@ public class Actor : MonoBehaviour
                     if (DoPatrol() == false)
                     {
                         ChangeState(State.Idle);
+                        // Quick and dirty
+                        RotateToNextDestination();
                     }
                 }
                 break;
@@ -109,5 +111,11 @@ public class Actor : MonoBehaviour
         {
             _timer.Start();
         }
+    }
+
+    private void RotateToNextDestination()
+    {
+        Vector3 direction = _destination[_currentDestinationIndex].position - transform.position;
+        transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 }

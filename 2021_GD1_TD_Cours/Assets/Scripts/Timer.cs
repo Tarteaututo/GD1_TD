@@ -37,6 +37,11 @@ public class Timer
         _currentDuration = _duration;
     }
 
+    public void Start(int duration)
+    {
+        _duration = duration;
+    }
+
     public void Stop()
     {
         _currentDuration = 0;
