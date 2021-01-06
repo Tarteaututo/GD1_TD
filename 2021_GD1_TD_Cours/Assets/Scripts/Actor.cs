@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 public class Actor : MonoBehaviour
 {
-    // byte == octet == 8 bits
-    // bit : 0 ou 1
-    // 1 << 0 1000 0100
     public enum State
     {
         Idle = 0,
@@ -15,7 +12,6 @@ public class Actor : MonoBehaviour
 
     [SerializeField]
     private Transform[] _destination = null;
-    //[SerializeField] private Transform _destination = null;
 
     [SerializeField]
     private float _speed = 1.5f;
@@ -30,44 +26,15 @@ public class Actor : MonoBehaviour
     [SerializeField]
     private State _state = State.Idle;
 
-    // Balancing value
     [SerializeField]
     private float _idleDuration = 1f;
 
-    // Valeur de "fonctionnement du système", cachée pour le designer
-    private float _currentIdleDuration = 1f;
+    private Timer _timer = null;
 
-    //#region tuto collection
-    //[SerializeField]
-    //private int[] _myIntArray = null;
-
-    //[SerializeField]
-    //private List<int> _myIntList = null;
-    //#endregion tuto collection
-
-
-
-    //private void UselessMethod()
-    //{
-    //    // ces trois formulations sont strictement égales
-    //    // i++ // existe en i--
-    //    // i += 1; // existe en -=
-    //    // i = i + 1; // existe en i = i - 1;
-    //    //
-
-    //    // j'accède au premier élément de mon tableau
-    //    //_myIntArray[0];
-
-    //    //_myIntArray.Length;
-    //    //_myIntList.Count;
-    //    int sum = 0;
-    //    for (int i = 0; i < _myIntArray.Length; i++)
-    //    {
-    //        // On ajoute chaque élément d'un tableau dans une variable
-    //        sum += _myIntArray[i];
-    //    }
-    //    // Sum == element 0 + element 1 + element 2 + ... + element n
-    //}
+    private void Awake()
+    {
+        _timer = new Timer(_idleDuration);
+    }
 
     void Update()
     {
@@ -75,11 +42,8 @@ public class Actor : MonoBehaviour
         {
             case State.Idle:
                 {
-                    _currentIdleDuration += Time.deltaTime;
-
-                    if (_currentIdleDuration >= _idleDuration)
+                    if (_timer.Update() == true)
                     {
-                        _currentIdleDuration = 0;
                         ChangeState(State.Patrol);
                     }
                 }
@@ -140,5 +104,10 @@ public class Actor : MonoBehaviour
     private void ChangeState(State newState)
     {
         _state = newState;
+
+        if (_state == State.Idle)
+        {
+            _timer.Start();
+        }
     }
 }

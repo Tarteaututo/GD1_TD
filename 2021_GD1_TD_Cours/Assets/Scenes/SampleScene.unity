@@ -232,6 +232,8 @@ MonoBehaviour:
   - {fileID: 8699947}
   _speed: 10
   _destinationThreshold: 0.1
+  _state: 0
+  _idleDuration: 3
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +445,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-9564
+  m_Name: pb_Mesh13904
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

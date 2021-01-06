@@ -10,12 +10,15 @@ using UnityEngine;
 /// // Start()
 /// // Stop()
 /// 
+/// // Update()
+/// 
 /// Bonus
 /// // Pause()
 /// </summary>
 public class Timer
 {
     private float _duration = -1;
+    private float _currentDuration = 0f;
 
     // Constructor
     public Timer(float duration)
@@ -23,22 +26,30 @@ public class Timer
         _duration = duration;
     }
 
-    // == more or less useless in unity context
-    // Destructor
-    ~Timer()
+    //// == more or less useless in unity context
+    //// Destructor
+    //~Timer()
+    //{
+    //}
+
+    public void Start()
     {
+        _currentDuration = _duration;
     }
-}
 
-// NE NOTEZ PAS ÇA
-public class Sometest
-{
-    Timer _timer = null;
-
-    private void SomeMethod()
+    public void Stop()
     {
-        _timer = new Timer(3);
+        _currentDuration = 0;
+    }
 
-        _timer.ToString();
+    public bool Update()
+    {
+        _currentDuration -= Time.deltaTime;
+
+        if (_currentDuration <= 0)
+        {
+            return true;
+        }
+        return false;
     }
 }
