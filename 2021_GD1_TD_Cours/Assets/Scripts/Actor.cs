@@ -4,6 +4,15 @@ using System.Collections.Generic;
 
 public class Actor : MonoBehaviour
 {
+    // byte == octet == 8 bits
+    // bit : 0 ou 1
+    // 1 << 0 1000 0100
+    public enum State
+    {
+        Idle = 0,
+        Patrol = 1,
+    }
+
     [SerializeField]
     private Transform[] _destination = null;
     //[SerializeField] private Transform _destination = null;
@@ -16,6 +25,17 @@ public class Actor : MonoBehaviour
 
     //[System.NonSerialized] // inverse of SerializeField
     private int _currentDestinationIndex = 0;
+
+    // Temporary
+    [SerializeField]
+    private State _state = State.Idle;
+
+    // Balancing value
+    [SerializeField]
+    private float _idleDuration = 1f;
+
+    // Valeur de "fonctionnement du système", cachée pour le designer
+    private float _currentIdleDuration = 1f;
 
     //#region tuto collection
     //[SerializeField]
@@ -51,6 +71,34 @@ public class Actor : MonoBehaviour
 
     void Update()
     {
+        switch (_state)
+        {
+            case State.Idle:
+                {
+                    _currentIdleDuration += Time.deltaTime;
+
+                    if (_currentIdleDuration >= _idleDuration)
+                    {
+                        _currentIdleDuration = 0;
+                        ChangeState(State.Patrol);
+                    }
+                }
+                break;
+            case State.Patrol:
+                {
+                    if (DoPatrol() == false)
+                    {
+                        ChangeState(State.Idle);
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    private bool DoPatrol()
+    {
         bool hasReachedThreshold = Vector3.Distance(transform.position, _destination[_currentDestinationIndex].position) < _destinationThreshold;
 
         // Est ce que ma position est plus proche que le seuil de destination
@@ -63,11 +111,13 @@ public class Actor : MonoBehaviour
             {
                 _currentDestinationIndex = 0;
             }
+            return false;
         }
         else
         {
             // Do Move
             Move();
+            return true;
         }
     }
 
@@ -85,5 +135,10 @@ public class Actor : MonoBehaviour
         //Vector3 direction = (_destination.position - transform.position).normalized;
 
         transform.position = transform.position + (_speed * direction * Time.deltaTime);
+    }
+
+    private void ChangeState(State newState)
+    {
+        _state = newState;
     }
 }
