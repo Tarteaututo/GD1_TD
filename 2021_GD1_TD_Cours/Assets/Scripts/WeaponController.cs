@@ -5,16 +5,12 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     [SerializeField]
-    private Projectile _projectile = null;
+    private AWeapon _weapon = null;
 
-    [SerializeField]
-    private Transform _projectileOffset = null;
-
+    // Command
     public void Fire()
     {
-        Projectile instance = Instantiate<Projectile>(_projectile);
-        instance.transform.position = _projectileOffset.position;
-        instance.transform.rotation = _projectileOffset.rotation;
+        _weapon.Fire();
     }
 
     //public void Switch()

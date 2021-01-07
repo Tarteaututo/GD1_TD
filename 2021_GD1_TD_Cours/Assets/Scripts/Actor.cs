@@ -41,6 +41,7 @@ public class Actor : MonoBehaviour
     private void Awake()
     {
         _timer = new Timer(_idleDuration);
+        ChangeState(State.Idle);
     }
 
     void Update()
