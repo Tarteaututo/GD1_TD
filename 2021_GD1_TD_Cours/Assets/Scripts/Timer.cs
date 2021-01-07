@@ -37,9 +37,10 @@ public class Timer
         _currentDuration = _duration;
     }
 
-    public void Start(int duration)
+    public void Start(float duration)
     {
         _duration = duration;
+        _currentDuration = _duration;
     }
 
     public void Stop()

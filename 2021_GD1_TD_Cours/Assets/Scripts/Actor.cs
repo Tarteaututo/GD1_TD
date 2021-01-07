@@ -8,7 +8,11 @@ public class Actor : MonoBehaviour
     {
         Idle = 0,
         Patrol = 1,
+        Firing = 2,
     }
+
+    [SerializeField]
+    private WeaponController _weaponController = null;
 
     [SerializeField]
     private Transform[] _destination = null;
@@ -28,6 +32,9 @@ public class Actor : MonoBehaviour
 
     [SerializeField]
     private float _idleDuration = 1f;
+
+    [SerializeField]
+    private float _preFiringDuration = 1f;
 
     private Timer _timer = null;
 
@@ -58,9 +65,23 @@ public class Actor : MonoBehaviour
                     }
                 }
                 break;
+            case State.Firing:
+                {
+                    if (_timer.Update() == true)
+                    {
+                        DoFire();
+                        ChangeState(State.Idle);
+                    }
+                }
+                break;
             default:
                 break;
         }
+    }
+
+    private void DoFire()
+    {
+        _weaponController.Fire();
     }
 
     private bool DoPatrol()
@@ -111,11 +132,24 @@ public class Actor : MonoBehaviour
         {
             _timer.Start();
         }
+        else if (_state == State.Firing)
+        {
+            _timer.Start(_preFiringDuration);
+        }
     }
 
     private void RotateToNextDestination()
     {
         Vector3 direction = _destination[_currentDestinationIndex].position - transform.position;
         transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Damageable damageable = other.GetComponentInParent<Damageable>();
+        if (damageable != null)
+        {
+            ChangeState(State.Firing);
+        }
     }
 }

@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField]
+    private int _damage = 1;
+
     private void OnTriggerEnter(Collider other)
     {
-        // vérifier si le collider est un damageable
         Damageable damageable = other.GetComponentInParent<Damageable>();
         if (damageable != null)
         {
-            damageable.DoDamage(1);
+            damageable.DoDamage(_damage);
+            Destroy(this.gameObject);
         }
-
-        // si oui
-        // damageable.DoDamage()
-        // Destroy itself
     }
 }
