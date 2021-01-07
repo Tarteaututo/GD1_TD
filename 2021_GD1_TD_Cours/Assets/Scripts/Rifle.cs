@@ -23,7 +23,6 @@ public class Rifle : AWeapon
     {
         base.Awake();
         _timer = new Timer(_fireRate);
-        Debug.Log("Rifle.Awake()");
     }
 
     public override void Fire()
@@ -31,6 +30,7 @@ public class Rifle : AWeapon
         // Déclencher le start du tir
         // Start timer
         _timer.Start();
+        Debug.Log("Rifle.Fire");
     }
 
     private void Update()
@@ -41,6 +41,18 @@ public class Rifle : AWeapon
             Projectile instance = Instantiate<Projectile>(projectile);
             instance.transform.position = _projectileOffset.position;
             instance.transform.rotation = _projectileOffset.rotation;
+
+            // On incrémente ( == additionner 1) _currentShotCount
+            _currentShotCount++;
+            if (_currentShotCount < _maxShotCount)
+            {
+                _timer.Start();
+            }
+            else
+            {
+                _currentShotCount = 0;
+            }
+            Debug.Log("Rifle.Update timer update == true");
         }
     }
 }

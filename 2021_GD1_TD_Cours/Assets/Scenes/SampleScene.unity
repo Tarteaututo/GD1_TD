@@ -410,7 +410,7 @@ MonoBehaviour:
   _speed: 6
   _destinationThreshold: 0.1
   _state: 0
-  _idleDuration: 3
+  _idleDuration: 1
   _preFiringDuration: 1
 --- !u!114 &705286713
 MonoBehaviour:
