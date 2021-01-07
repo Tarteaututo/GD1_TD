@@ -60,8 +60,7 @@ public class Actor : MonoBehaviour
                     if (DoPatrol() == false)
                     {
                         ChangeState(State.Idle);
-                        // Quick and dirty
-                        RotateToNextDestination();
+
                     }
                 }
                 break;
@@ -136,11 +135,17 @@ public class Actor : MonoBehaviour
         {
             _timer.Start(_preFiringDuration);
         }
+        else if (_state == State.Patrol)
+        {
+            // Quick and dirty
+            RotateToTarget(_destination[_currentDestinationIndex].position);
+        }
     }
-
-    private void RotateToNextDestination()
+    
+    private void RotateToTarget(Vector3 target)
     {
-        Vector3 direction = _destination[_currentDestinationIndex].position - transform.position;
+        Vector3 direction = target - transform.position;
+        direction.y = 0;
         transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 
@@ -150,6 +155,7 @@ public class Actor : MonoBehaviour
         if (damageable != null)
         {
             ChangeState(State.Firing);
+            RotateToTarget(damageable.transform.position);
         }
     }
 }
