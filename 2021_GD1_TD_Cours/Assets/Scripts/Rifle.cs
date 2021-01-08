@@ -38,7 +38,7 @@ public class Rifle : AWeapon
         // Utiliser un timer pour attendre selon le fire rate
         if (_timer.Update() == true)
         {
-            Projectile instance = Instantiate<Projectile>(projectile);
+            AProjectile instance = Instantiate<AProjectile>(projectile);
             instance.transform.position = _projectileOffset.position;
             instance.transform.rotation = _projectileOffset.rotation;
 

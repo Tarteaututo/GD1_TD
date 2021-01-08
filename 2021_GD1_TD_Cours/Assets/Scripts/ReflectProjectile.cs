@@ -15,12 +15,12 @@ public class ReflectProjectile : AProjectile
         //public static bool Raycast(Vector3 origin, Vector3 direction, out RaycastHit hitInfo);
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo) == true)
         {
-            //hitInfo.
+            // On trouve la nouvelle direction à partir du forward du projectile, par rapport à la normale du plan hit
+            Vector3 newDirection = Vector3.Reflect(transform.forward, hitInfo.normal);
+
+            AProjectile instance = Instantiate(projectile);
+            instance.transform.position = transform.position;
+            instance.transform.rotation = Quaternion.LookRotation(newDirection);
         }
-
-        // Get the source vector and hit normal
-        //Vector3.Dot(
-
-        Projectile instance = Instantiate<Projectile>(projectile);
     }
 }

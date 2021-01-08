@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65e131adbbf69742b678e3fb5d6b12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 162867064192709590, guid: 0e602c17fabab2d4c900e79db7c854a1,
+  projectile: {fileID: 5313970848314495602, guid: 34ce1ef023dafbd4fbeea2d471bb5ed3,
     type: 3}
   _projectileOffset: {fileID: 553190869}
 --- !u!1 &705286710
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58427ad80de0994ea89363ee9f0092a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapon: {fileID: 537472984}
+  _weapon: {fileID: 553190870}
 --- !u!54 &705286714
 Rigidbody:
   m_ObjectHideFlags: 0

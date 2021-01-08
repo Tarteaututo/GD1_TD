@@ -36,7 +36,7 @@ public class Shotgun : AWeapon
                         //Quaternion randomSpread = Quaternion.Euler(randomX, randomY, 0);
                         Quaternion randomSpread = Quaternion.Euler(Random.Range(-15, 15), Random.Range(-15, 15), 0);
 
-                        Projectile instance = Instantiate<Projectile>(projectile);
+                        AProjectile instance = Instantiate<AProjectile>(projectile);
                         instance.transform.position = _projectileOffset.position;
                         instance.transform.rotation = _projectileOffset.rotation * randomSpread;
                     }
@@ -46,7 +46,7 @@ public class Shotgun : AWeapon
                 {
                     for (int i = 0; i < _maxShotCount; i++)
                     {
-                        Projectile instance = Instantiate<Projectile>(projectile);
+                        AProjectile instance = Instantiate<AProjectile>(projectile);
                         instance.transform.position = _projectileOffset.position + Random.insideUnitSphere * _spread;
                         instance.transform.rotation = _projectileOffset.rotation;
                     }

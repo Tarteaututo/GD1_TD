@@ -6,7 +6,7 @@ public abstract class AWeapon : MonoBehaviour
 {
     // protected : accessible uniquement par les classes qui héritent de AWeapon
     [SerializeField]
-    protected Projectile projectile = null;
+    protected AProjectile projectile = null;
 
     public abstract void Fire();
 

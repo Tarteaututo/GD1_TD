@@ -7,7 +7,7 @@ public class Gun : AWeapon
 
     public override void Fire()
     {
-        Projectile instance = Instantiate<Projectile>(projectile);
+        AProjectile instance = Instantiate<AProjectile>(projectile);
         instance.transform.position = _projectileOffset.position;
         instance.transform.rotation = _projectileOffset.rotation;
     }
