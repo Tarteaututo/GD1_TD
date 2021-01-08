@@ -2,27 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : AProjectile
 {
-    [SerializeField]
-    private int _damage = 1;
-
-    [SerializeField]
-    private float _speed = 1f;
-
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
-        Damageable damageable = other.GetComponentInParent<Damageable>();
-        if (damageable != null)
-        {
-            damageable.DoDamage(_damage);
-            Destroy(this.gameObject);
-        }
+        base.OnTriggerEnter(other);
+        Debug.Log("Projectile.OnTriggerEnter");
     }
 
-    private void Update()
+    protected override void Move()
     {
-        // On se déplace de 1m en direction du forward de l'actor
-        transform.position = transform.position + (transform.forward * _speed * Time.deltaTime);
+        // Base pointe vers AProjectile
+        base.Move();
     }
 }

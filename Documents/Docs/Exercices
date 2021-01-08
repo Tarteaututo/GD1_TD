@@ -1,0 +1,12 @@
+Exercice jour 3 :
+Créer une nouvelle arme qui hérite de AWeapon
+Choisissez le game design de cette arme (shotgun ?)
+Implémenter l'arme de la même manière que Rifle ou Gun mais suivant votre design
+
+
+
+Exercice jour 4 : 
+
+Refactor le comportement des projectiles avec une classe abstraite qui représente un projectile.
+Ajouter (en classe dérivée) un projectile par défaut similaire au projectile déjà existant.
+Ajouter un nouveau projectile qui vous designerez.
