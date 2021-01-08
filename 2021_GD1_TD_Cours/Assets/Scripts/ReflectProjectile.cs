@@ -5,12 +5,10 @@ using UnityEngine;
 public class ReflectProjectile : AProjectile
 {
     [SerializeField]
-    private Projectile projectile = null;
+    private AProjectile projectile = null;
 
     protected override void OnDamageableFound(Damageable damageable)
     {
-        base.OnDamageableFound(damageable);
-
         // Get the hit normal
         //public static bool Raycast(Vector3 origin, Vector3 direction, out RaycastHit hitInfo);
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo) == true)
@@ -19,8 +17,9 @@ public class ReflectProjectile : AProjectile
             Vector3 newDirection = Vector3.Reflect(transform.forward, hitInfo.normal);
 
             AProjectile instance = Instantiate(projectile);
-            instance.transform.position = transform.position;
+            instance.transform.position = transform.position + newDirection * 0.2f;
             instance.transform.rotation = Quaternion.LookRotation(newDirection);
         }
+        base.OnDamageableFound(damageable);
     }
 }
