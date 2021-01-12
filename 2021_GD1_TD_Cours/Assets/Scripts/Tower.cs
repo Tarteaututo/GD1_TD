@@ -60,6 +60,7 @@ public class Tower : MonoBehaviour
             if (_timer.Update() == true)
             {
                 Fire();
+                _timer.Start();
             }
         }
     }
