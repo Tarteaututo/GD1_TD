@@ -10,14 +10,14 @@ public abstract class AProjectile : MonoBehaviour
     [SerializeField]
     private float _speed = 1f;
 
-    protected virtual void OnTriggerEnter(Collider other)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
-        Damageable damageable = other.GetComponentInParent<Damageable>();
+        Damageable damageable = collision.transform.GetComponentInParent<Damageable>();
         if (damageable != null)
         {
             OnDamageableFound(damageable);
         }
-        Debug.Log("AProjectile.OnTriggerEnter");
+        Debug.Log("AProjectile.OnCollisionEnter");
     }
 
     protected virtual void Update()

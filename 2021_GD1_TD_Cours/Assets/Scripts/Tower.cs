@@ -85,7 +85,7 @@ public class Tower : MonoBehaviour
 
         if (instance is AutoguidedProjectile autoguidedProjectile)
         {
-            autoguidedProjectile.SetTarget(_currentTarget.transform);
+            autoguidedProjectile.SetTarget(_currentTarget);
         }
     }
 

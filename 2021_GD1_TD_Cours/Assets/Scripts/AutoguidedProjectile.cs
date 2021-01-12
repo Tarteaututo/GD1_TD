@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AutoguidedProjectile : AProjectile
 {
-    private Transform _currentTarget = null;
+    private Damageable _currentTarget = null;
 
-    public void SetTarget(Transform target)
+    public void SetTarget(Damageable target)
     {
         _currentTarget = target;
     }
@@ -14,7 +14,7 @@ public class AutoguidedProjectile : AProjectile
     protected override void Move()
     {
         // Trouver la direction vers la target et s'y orienter
-        Vector3 direction = _currentTarget.position - transform.position;
+        Vector3 direction = _currentTarget.Offset.position - transform.position;
         transform.rotation = Quaternion.LookRotation(direction);
 
         // On appelle la methode de base Move ( == se déplacer tout droit devant soi)

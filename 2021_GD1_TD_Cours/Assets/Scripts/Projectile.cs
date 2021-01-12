@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Projectile : AProjectile
 {
-    protected override void OnTriggerEnter(Collider other)
+    protected override void OnCollisionEnter(Collision collision)
     {
-        base.OnTriggerEnter(other);
-        Debug.Log("Projectile.OnTriggerEnter");
+        base.OnCollisionEnter(collision);
+        Debug.Log("Projectile.OnCollisionEnter");
     }
 
     protected override void Move()
