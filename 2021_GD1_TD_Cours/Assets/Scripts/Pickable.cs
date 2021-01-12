@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickable : MonoBehaviour
+public abstract class Pickable : MonoBehaviour
 {
+    public abstract void Pick();
 }

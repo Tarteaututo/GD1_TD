@@ -24,17 +24,20 @@ public class Picker : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0) == true)
         {
-            Debug.Log("Mouse up");
             // lancer le raycast
-            //public static bool Raycast(Vector3 origin, Vector3 direction, out RaycastHit hitInfo, float maxDistance);
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, _raycastMaxDistance, _layerMask.value) == true)
             {
-
                 Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.blue, 2f, false);
 
-                Transform instance = Instantiate(_somePrefab);
-                instance.transform.position = hit.point;
+                Pickable foundPickable = hit.transform.GetComponentInParent<Pickable>();
+                if (foundPickable != null)
+                {
+                    foundPickable.Pick();
+                }
+
+                //Transform instance = Instantiate(_somePrefab);
+                //instance.transform.position = hit.point;
             }
         }
     }
