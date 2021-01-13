@@ -9,7 +9,7 @@ public class TowerSlotPickable : Pickable
 
     private Tower _towerInstance = null;
 
-    public override void Pick()
+    public override void Pick(RaycastHit hit)
     {
         Debug.LogFormat("{0}.Pick() {1} is been picked.", GetType().Name, gameObject.name);
 

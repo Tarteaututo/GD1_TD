@@ -33,7 +33,7 @@ public class Picker : MonoBehaviour
                 Pickable foundPickable = hit.transform.GetComponentInParent<Pickable>();
                 if (foundPickable != null)
                 {
-                    foundPickable.Pick();
+                    foundPickable.Pick(hit);
                 }
 
                 //Transform instance = Instantiate(_somePrefab);

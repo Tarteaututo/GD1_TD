@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Pickable : MonoBehaviour
 {
-    public abstract void Pick();
+    public abstract void Pick(RaycastHit hit);
 }
