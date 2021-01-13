@@ -22,6 +22,7 @@ public class GridTester : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetKeyDown(_showPreviewKey) == true)
         {
             TogglePreviewVisibility();

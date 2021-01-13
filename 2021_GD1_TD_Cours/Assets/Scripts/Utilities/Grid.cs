@@ -18,17 +18,22 @@ public class Grid : MonoBehaviour
     {
         // Arrondir notre position
         // décaler en fonction de la taille des cellules
+        //Vector3 newPosition = new Vector3(
+        //    Mathf.Floor((position.x / _cellSize) / _cellSize),
+        //    Mathf.Floor((position.y / _cellSize) / _cellSize),
+        //    Mathf.Floor((position.z / _cellSize) / _cellSize) + _cellSize
+        //);
         Vector3 newPosition = new Vector3(
             Mathf.Floor((position.x / _cellSize) * _cellSize),
             Mathf.Floor((position.y / _cellSize) * _cellSize),
-            Mathf.Floor((position.z / _cellSize) * _cellSize)
+            Mathf.Floor((position.z / _cellSize) * _cellSize) + _cellSize
         );
         return newPosition;
     }
 
     private void OnDrawGizmos()
     {
-        Vector3 position = transform.position;
+        Vector3 position = transform.position/* - (Vector3.one * _cellSize * 0.5f)*/;
         for (int y = 0; y < _cellCount; y++)
         {
             for (int x = 0; x < _cellCount; x++)
