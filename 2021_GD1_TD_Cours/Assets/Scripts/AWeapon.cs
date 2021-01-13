@@ -10,6 +10,11 @@ public abstract class AWeapon : MonoBehaviour
 
     public abstract void Fire();
 
+    public virtual void Enable()
+    {
+        Debug.Log("AWeapon.Enable()");
+    }
+
     protected virtual void Awake()
     {
         Debug.Log("AWeapon.Awake()");
