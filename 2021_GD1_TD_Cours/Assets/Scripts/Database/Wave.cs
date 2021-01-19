@@ -11,7 +11,11 @@ public class Wave : ScriptableObject
     [SerializeField]
     private float _spawnDelay = 1f;
 
+    [System.NonSerialized]
     private int _currentSpawnIndex = 0;
+
+    private Timer _timer = null;
+
 
     public bool IsWaveEnded()
     {
@@ -27,6 +31,20 @@ public class Wave : ScriptableObject
         Actor selectedActor = _actors[_currentSpawnIndex];
         _currentSpawnIndex += 1;
         return selectedActor;
+    }
+
+    public void StartTimer()
+    {
+        if (_timer == null)
+        {
+            _timer = new Timer(_spawnDelay);
+        }
+        _timer.Start();
+    }
+
+    public bool UpdateTimer()
+    {
+        return _timer.Update();
     }
 
 

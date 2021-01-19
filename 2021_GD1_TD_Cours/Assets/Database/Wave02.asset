@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7d7527268514b4bba5b1c3ac0d18e9, type: 3}
   m_Name: Wave02
   m_EditorClassIdentifier: 
+  _actors:
+  - {fileID: 6917007306712104208, guid: f2dd195d03a999d4ca16ec25011b7959, type: 3}
+  - {fileID: 6917007306712104208, guid: f2dd195d03a999d4ca16ec25011b7959, type: 3}
+  - {fileID: 7771577381794360536, guid: 368e7e89e025d194da473e7849371d12, type: 3}
+  _spawnDelay: 1
