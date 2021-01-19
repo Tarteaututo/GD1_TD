@@ -26,6 +26,8 @@ public class Tower : MonoBehaviour
     private void Awake()
     {
         _timer = new Timer(_fireRate);
+
+        UIManager.Instance.AddTowerCount();
     }
 
     private void OnTriggerEnter(Collider other)
