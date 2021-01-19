@@ -38,10 +38,17 @@ public class Actor : MonoBehaviour
 
     private Timer _timer = null;
 
+    public void SetDestination(Transform[] destinations)
+    {
+        _destination = destinations;
+    }
+
     private void Awake()
     {
         _timer = new Timer(_idleDuration);
         ChangeState(State.Idle);
+
+        UIManager.Instance.AddActorCount();
     }
 
     void Update()

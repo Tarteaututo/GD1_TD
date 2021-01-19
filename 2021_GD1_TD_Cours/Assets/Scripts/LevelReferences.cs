@@ -1,21 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class UIManager : MonoBehaviour
+public class LevelReferences : MonoBehaviour
 {
     #region Singleton
-    private static UIManager _instance = null;
+    private static LevelReferences _instance = null;
 
-    public static UIManager Instance
+    public static LevelReferences Instance
     {
         get
         {
             if (_instance == null)
             {
                 // Vérifier s'il existe un UIManager
-                UIManager[] instances = FindObjectsOfType<UIManager>();
+                LevelReferences[] instances = FindObjectsOfType<LevelReferences>();
                 if (instances == null || instances.Length == 0)
                 {
                     // debug message d'erreur
@@ -36,23 +35,5 @@ public class UIManager : MonoBehaviour
     #endregion Singleton
 
     [SerializeField]
-    private TextMeshProUGUI _towerCountText = null;
-
-    [SerializeField]
-    private TextMeshProUGUI _actorCountText = null;
-
-    private int _currentTowerCount = 0;
-    private int _currentActorCount = 0;
-
-    public void AddTowerCount()
-    {
-        _currentTowerCount += 1; //_currentTowerCount++;
-        _towerCountText.text = _currentTowerCount.ToString();
-    }
-
-    public void AddActorCount()
-    {
-        _currentActorCount += 1;
-        _actorCountText.text = _currentActorCount.ToString(); 
-    }
+    private WaveDatabase _waveDatabase = null;
 }
