@@ -30,15 +30,25 @@ public class Tower : MonoBehaviour
         UIManager.Instance.AddTowerCount();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void TryAddTarget(Collider other)
     {
         // On retient le dernier damageable qui entre dans la zone
         Damageable damageable = other.GetComponentInParent<Damageable>();
-        if (damageable != null)
+        if (damageable != null && _currentTarget == null)
         {
             _currentTarget = damageable;
             _timer.Start();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        TryAddTarget(other);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        TryAddTarget(other);
     }
 
     private void OnTriggerExit(Collider other)
