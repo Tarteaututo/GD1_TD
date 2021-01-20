@@ -8,6 +8,9 @@ public class DamageableParticleHandler : MonoBehaviour
 {
     [SerializeField]
     private ParticleSystem _killParticle = null;
+    
+    [SerializeField]
+    private ParticleSystem _hitParticle = null;
 
     [SerializeField]
     private Damageable _damageable = null;
@@ -33,5 +36,23 @@ public class DamageableParticleHandler : MonoBehaviour
             currentHealth, 
             maxHealth
         );
+
+        // Est ce que je me suis pris un dégat ?
+        if (currentHealth < previousHealth)
+        {
+            // on instancie la hitparticle
+            ParticleSystem instance = Instantiate<ParticleSystem>(_hitParticle);
+            instance.transform.position = transform.position;
+            instance.transform.rotation = transform.rotation;
+        }
+
+        // Est ce que je vais etre détruit
+        if (currentHealth <= 0)
+        {
+            // on instancie la killparticle
+            ParticleSystem instance = Instantiate<ParticleSystem>(_killParticle);
+            instance.transform.position = transform.position;
+            instance.transform.rotation = transform.rotation;
+        }
     }
 }

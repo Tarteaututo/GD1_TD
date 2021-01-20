@@ -124,6 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _killParticle: {fileID: 1982444412965901426, guid: 25c34f5019c924c448ca621ce135ab85,
     type: 3}
+  _hitParticle: {fileID: 6950405742498050117, guid: b1789e7a75ce8a6499dd919e4f85305a,
+    type: 3}
   _damageable: {fileID: 7771577381794360539}
 --- !u!1 &7771577381895065910
 GameObject:
