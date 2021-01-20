@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         // Lancer la scene de game
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("Game", LoadSceneMode.Single);
     }
 
     private void OnEnable()

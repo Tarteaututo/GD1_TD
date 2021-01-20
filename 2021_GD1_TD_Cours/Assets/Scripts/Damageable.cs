@@ -6,6 +6,9 @@ public class Damageable : MonoBehaviour
 {
     #region Fields
     [SerializeField]
+    private HealthBar _healthBar = null;
+
+    [SerializeField]
     private int _health = 2;
 
     [SerializeField]
@@ -50,6 +53,9 @@ public class Damageable : MonoBehaviour
         //if (HealthChanged != null)
         //{
         //}
+
+        _healthBar.UpdateHealthBar(_currentHealth, _health);
+
         HealthChanged?.Invoke(this, previousHealth, _currentHealth, _health);
 
         // Quand la vie arrive à 0 : détruit l'actor
