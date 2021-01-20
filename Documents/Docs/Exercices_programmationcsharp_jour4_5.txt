@@ -37,3 +37,24 @@ Conseils :
 		- la formule pour trouver une direction
 		- la class Timer pour attendre x secondes
 		- l'utilisation de Quaternion.Euler et LookRotation, etc...
+
+
+
+
+Exercice jour 7 :
+	- Reproduire le comportement de TowerCount avec un nouvel objet ActorCount -> Du UI qui renvoit le nombre d'actor dans la semaine dynamiquement
+
+
+
+
+Exercice jour 8 :
+
+- Ajouter à DamageableParticleHandler une série de règles (quand la vie est comme ceci ou comme cela) qui déclenchent des feedbacks différents et reconnaissable.
+
+ OBLIGATOIRE :
+ 	- Une particle de hit est lancée quand un damageable se prends un dégats
+ 	- Une partie de kill est lancée quand un damageable est détruit
+
+Bonus (exemple) :
+	- Si le dégat est supérieur à X (valeur en dur ou relative, par ex à la max health), on lance une particle différentes
+	- Si la vie du damageable est en dessous d'une certaine valeur, déclencher un feedback différent (plusieurs paliers possibles)

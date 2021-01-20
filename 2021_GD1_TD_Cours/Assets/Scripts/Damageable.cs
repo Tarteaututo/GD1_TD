@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
+    #region Fields
     [SerializeField]
     private int _health = 2;
 
@@ -11,7 +12,9 @@ public class Damageable : MonoBehaviour
     private Transform _offset = null;
 
     private int _currentHealth = 0;
+    #endregion Fields
 
+    #region Properties
     // Properties : 
     public Transform Offset
     {
@@ -25,14 +28,35 @@ public class Damageable : MonoBehaviour
         //    _offset = value;
         //}
     }
+    #endregion Properties
 
+    #region Events
+    public delegate void DamageableEvent(Damageable sender, int previousHealth, int currentHealth, int maxHealth);
+    public event DamageableEvent HealthChanged = null;
+    #endregion Events
+
+    #region Methods
     private void Awake()
     {
         _currentHealth = _health;
+        HealthChanged = null;
     }
 
     public void DoDamage(int damage)
     {
+        int previousHealth = _currentHealth;
         _currentHealth -= damage;
+
+        //if (HealthChanged != null)
+        //{
+        //}
+        HealthChanged?.Invoke(this, previousHealth, _currentHealth, _health);
+
+        // Quand la vie arrive à 0 : détruit l'actor
+        if (_currentHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
+    #endregion Methods
 }

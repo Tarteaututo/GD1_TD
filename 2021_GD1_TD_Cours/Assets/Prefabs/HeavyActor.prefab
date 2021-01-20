@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7771577381794360537}
   - component: {fileID: 7771577381794360538}
   - component: {fileID: 7771577381794360539}
+  - component: {fileID: 6048254895250114870}
   m_Layer: 0
   m_Name: HeavyActor
   m_TagString: Untagged
@@ -109,6 +110,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 2
   _offset: {fileID: 7771577382907018082}
+--- !u!114 &6048254895250114870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771577381794360534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6cec12411a1f445ad89d3a1bde25c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _killParticle: {fileID: 1982444412965901426, guid: 25c34f5019c924c448ca621ce135ab85,
+    type: 3}
+  _damageable: {fileID: 7771577381794360539}
 --- !u!1 &7771577381895065910
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,14 @@ public class AutoguidedProjectile : AProjectile
 
     protected override void Move()
     {
+        //if (_currentTarget) -> est ce que l'objet unity c# et c++ sont tous les deux existants (not null, not "null")
+        //if (!_currentTarget) -> inverse d'au dessus
+        if (_currentTarget == null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
         // Trouver la direction vers la target et s'y orienter
         Vector3 direction = _currentTarget.Offset.position - transform.position;
         transform.rotation = Quaternion.LookRotation(direction);
