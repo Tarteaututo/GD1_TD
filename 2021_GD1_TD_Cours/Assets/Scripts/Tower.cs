@@ -5,6 +5,9 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField]
+    private SphereCollider _collider = null;
+
+    [SerializeField]
     private Transform _headTransform = null;
 
     [SerializeField]
@@ -19,6 +22,9 @@ public class Tower : MonoBehaviour
     [SerializeField]
     private AProjectile _projectile = null;
 
+    [SerializeField]
+    private CircleFeedback _circleFeedback = null;
+
     private Damageable _currentTarget = null;
 
     private Timer _timer = null;
@@ -26,8 +32,9 @@ public class Tower : MonoBehaviour
     private void Awake()
     {
         _timer = new Timer(_fireRate);
-
         UIManager.Instance.AddTowerCount();
+
+        _circleFeedback.SetRadius(_collider.radius);
     }
 
     private void TryAddTarget(Collider other)

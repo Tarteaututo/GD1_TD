@@ -46,4 +46,12 @@ public class LevelReferences : MonoBehaviour
     public EndGameMenu EndGameMenu => _endGameMenu;
     public GameManager GameManager => _gameManager;
     public Camera Camera => _camera;
+    //public Camera Camera
+    //{
+    //    get
+    //    {
+    //        return _camera;
+    //    }
+    //}
+
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 18961175}
   - component: {fileID: 18961174}
   - component: {fileID: 18961173}
+  - component: {fileID: 51510324410981000}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -73,6 +74,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _foreground: {fileID: 1809428208}
+--- !u!114 &51510324410981000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18961172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceee66d527624474ea2340a49c5d75db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1809428207
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +248,6 @@ GameObject:
   - component: {fileID: 7771577381794360538}
   - component: {fileID: 7771577381794360539}
   - component: {fileID: 6048254895250114870}
-  - component: {fileID: 618565246721134145}
   m_Layer: 0
   m_Name: HeavyActor
   m_TagString: Untagged
@@ -352,18 +364,6 @@ MonoBehaviour:
   _hitParticle: {fileID: 6950405742498050117, guid: b1789e7a75ce8a6499dd919e4f85305a,
     type: 3}
   _damageable: {fileID: 7771577381794360539}
---- !u!114 &618565246721134145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7771577381794360534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceee66d527624474ea2340a49c5d75db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7771577381895065910
 GameObject:
   m_ObjectHideFlags: 0
