@@ -15,5 +15,5 @@ MonoBehaviour:
   _actors:
   - {fileID: 6917007306712104208, guid: f2dd195d03a999d4ca16ec25011b7959, type: 3}
   - {fileID: 6917007306712104208, guid: f2dd195d03a999d4ca16ec25011b7959, type: 3}
-  - {fileID: 7771577381794360536, guid: 368e7e89e025d194da473e7849371d12, type: 3}
+  - {fileID: 6917007306712104208, guid: 55d5228bd2b10004298708143d5af40d, type: 3}
   _spawnDelay: 1

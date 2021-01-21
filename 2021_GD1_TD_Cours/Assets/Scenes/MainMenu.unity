@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quitButton: {fileID: 701584255}
+  _gameSceneName: Game_LD01
 --- !u!1 &556590658
 GameObject:
   m_ObjectHideFlags: 0

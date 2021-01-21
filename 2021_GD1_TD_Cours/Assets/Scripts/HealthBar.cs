@@ -15,7 +15,9 @@ public class HealthBar : MonoBehaviour
         // Je récupère la scale précédente
         Vector3 scale = _foreground.localScale;
         // Je modifie ce qui m'intéresse dans la scale précédente
-        scale.x = perc;
+        //HACK
+        scale.x = Mathf.Clamp01(perc);
+
         // je donne à foreground.localscale la nouvelle scale modifiée
         _foreground.localScale = scale;
 

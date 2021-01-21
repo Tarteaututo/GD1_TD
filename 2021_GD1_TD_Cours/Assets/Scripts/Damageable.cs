@@ -14,10 +14,22 @@ public class Damageable : MonoBehaviour
     [SerializeField]
     private Transform _offset = null;
 
+    // HACK : new values
+    [SerializeField]
+    private bool _destroyIfHealthBelowZero = true;
+
     private int _currentHealth = 0;
     #endregion Fields
 
     #region Properties
+    public bool IsAlive
+    {
+        get
+        {
+            return _currentHealth > 0;
+        }
+    }
+
     // Properties : 
     public Transform Offset
     {
@@ -59,7 +71,8 @@ public class Damageable : MonoBehaviour
         HealthChanged?.Invoke(this, previousHealth, _currentHealth, _health);
 
         // Quand la vie arrive à 0 : détruit l'actor
-        if (_currentHealth <= 0)
+        if (_destroyIfHealthBelowZero == true && 
+            _currentHealth <= 0)
         {
             Destroy(this.gameObject);
         }

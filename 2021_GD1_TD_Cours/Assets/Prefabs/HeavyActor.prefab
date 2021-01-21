@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 7771577381794360538}
   - component: {fileID: 7771577381794360539}
   - component: {fileID: 6048254895250114870}
+  - component: {fileID: 618565246721134145}
   m_Layer: 0
   m_Name: HeavyActor
   m_TagString: Untagged
@@ -283,7 +284,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _speed: 6
+  _speed: 4
   _destinationThreshold: 0.1
   _state: 0
   _idleDuration: 1
@@ -331,8 +332,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 18961173}
-  _health: 2
+  _health: 5
   _offset: {fileID: 7771577382907018082}
+  _destroyIfHealthBelowZero: 1
 --- !u!114 &6048254895250114870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +352,18 @@ MonoBehaviour:
   _hitParticle: {fileID: 6950405742498050117, guid: b1789e7a75ce8a6499dd919e4f85305a,
     type: 3}
   _damageable: {fileID: 7771577381794360539}
+--- !u!114 &618565246721134145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771577381794360534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceee66d527624474ea2340a49c5d75db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7771577381895065910
 GameObject:
   m_ObjectHideFlags: 0

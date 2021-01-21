@@ -15,30 +15,39 @@ public class WaveManager : MonoBehaviour
     // Quand la wave est terminé, on demande la prochaine wave
 
     private Wave _currentWave = null;
-  
+
     private void Update()
     {
-        if (_currentWave == null && _waveDatabase.IsAllWavesEnded() == false)
+        //HACK
+        if (_waveDatabase.IsAllWavesEnded() == false)
         {
-            // une seule frame quand le current wave n'existe pas
-            _currentWave = _waveDatabase.GetNextWave();
-            _currentWave.StartTimer();
-        }
-
-        if (_currentWave != null && _currentWave.UpdateTimer() == true)
-        {
-            // Quand la current wave est terminée, on la set à null
-            if (_currentWave.IsWaveEnded() == true)
+            if (_currentWave == null)
             {
-                _currentWave = null;
-            }
-            // Sinon on demande le prochaine actor, on l'instancie, et on redémarre le timer
-            else
-            {
-                Actor actor = _currentWave.GetNextActor();
-                _spawner.SpawnActor(actor);
+                // une seule frame quand le current wave n'existe pas
+                _currentWave = _waveDatabase.GetNextWave();
                 _currentWave.StartTimer();
             }
+
+            if (_currentWave != null && _currentWave.UpdateTimer() == true)
+            {
+                // Quand la current wave est terminée, on la set à null
+                if (_currentWave.IsWaveEnded() == true)
+                {
+                    _currentWave = null;
+                }
+                // Sinon on demande le prochaine actor, on l'instancie, et on redémarre le timer
+                else
+                {
+                    Actor actor = _currentWave.GetNextActor();
+                    _spawner.SpawnActor(actor);
+                    _currentWave.StartTimer();
+                }
+            }
+        }
+        else
+        {
+            enabled = false;
+            // Wait for no actor, then victory !
         }
     }
 }

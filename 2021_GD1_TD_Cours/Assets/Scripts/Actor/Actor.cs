@@ -88,7 +88,11 @@ public class Actor : MonoBehaviour
 
     private void DoFire()
     {
-        _weaponController.Fire();
+        // HACK
+        if (_weaponController != null)
+        {
+            _weaponController.Fire();
+        }
     }
 
     private bool DoPatrol()

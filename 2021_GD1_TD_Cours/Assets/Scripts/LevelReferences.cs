@@ -35,5 +35,15 @@ public class LevelReferences : MonoBehaviour
     #endregion Singleton
 
     [SerializeField]
-    private WaveDatabase _waveDatabase = null;
+    private Camera _camera = null;
+
+    [SerializeField]
+    private EndGameMenu _endGameMenu = null;
+
+    [SerializeField]
+    private GameManager _gameManager = null;
+
+    public EndGameMenu EndGameMenu => _endGameMenu;
+    public GameManager GameManager => _gameManager;
+    public Camera Camera => _camera;
 }

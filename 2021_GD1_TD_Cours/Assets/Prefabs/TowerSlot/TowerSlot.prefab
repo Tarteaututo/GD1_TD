@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6502488098394591727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.1, y: 0.01, z: 12.3}
+  m_LocalPosition: {x: -9.1, y: 0, z: 12.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6502488098451619194}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerPrefab: {fileID: 4365909769157009478, guid: 3ce5501b359eda441b561ac84d84281f,
     type: 3}
+  _instanceOffset: {fileID: 6502488098451619194}
 --- !u!1 &6502488098451619199
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +75,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6502488098451619199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.01, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6502488098394591726}
@@ -165,10 +166,10 @@ MonoBehaviour:
   - m_Vertices: 02000000
   m_SharedTextures: []
   m_Positions:
-  - {x: -0.5, y: 0.000000059604645, z: 0.5}
-  - {x: 0.5, y: 0.000000059604645, z: 0.5}
-  - {x: -0.5, y: 0.000000059604645, z: -0.5}
-  - {x: 0.5, y: 0.000000059604645, z: -0.5}
+  - {x: -0.5, y: 0, z: 0.5}
+  - {x: 0.5, y: 0, z: 0.5}
+  - {x: -0.5, y: 0, z: -0.5}
+  - {x: 0.5, y: 0, z: -0.5}
   m_Textures0:
   - {x: -0.5, y: 0.5}
   - {x: 0.5, y: 0.5}
@@ -190,9 +191,17 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 
-  m_SelectedEdges: []
-  m_SelectedVertices: 
+  m_SelectedFaces: 00000000
+  m_SelectedEdges:
+  - a: 0
+    b: 1
+  - a: 2
+    b: 0
+  - a: 1
+    b: 3
+  - a: 3
+    b: 2
+  m_SelectedVertices: 00000000010000000200000003000000
 --- !u!65 &1666235357167618035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -205,4 +214,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.1, z: 1}
-  m_Center: {x: 0, y: 0.000000059604645, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}

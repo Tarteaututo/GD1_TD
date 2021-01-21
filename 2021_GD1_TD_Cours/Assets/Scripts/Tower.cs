@@ -38,6 +38,8 @@ public class Tower : MonoBehaviour
         {
             _currentTarget = damageable;
             _timer.Start();
+            OrientToTarget(_currentTarget.transform);
+            Fire();
         }
     }
 
@@ -66,15 +68,20 @@ public class Tower : MonoBehaviour
     {
         if (_currentTarget != null)
         {
-            RotateHeadTo(_currentTarget.transform);
-            RotateCanonTo(_currentTarget.transform);
-
+            OrientToTarget(_currentTarget.transform);
             if (_timer.Update() == true)
             {
                 Fire();
                 _timer.Start();
             }
         }
+    }
+
+    //HACK
+    private void OrientToTarget(Transform target)
+    {
+        RotateHeadTo(target);
+        RotateCanonTo(target);
     }
 
     private void RotateHeadTo(Transform target)

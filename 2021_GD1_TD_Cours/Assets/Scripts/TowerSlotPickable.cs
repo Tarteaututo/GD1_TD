@@ -7,6 +7,9 @@ public class TowerSlotPickable : Pickable
     [SerializeField]
     private Tower _towerPrefab = null;
 
+    [SerializeField]
+    private Transform _instanceOffset = null;
+
     private Tower _towerInstance = null;
 
     public override void Pick(RaycastHit hit)
@@ -19,7 +22,7 @@ public class TowerSlotPickable : Pickable
         {
             // créer une tour et s'en rappeler
             _towerInstance = Instantiate(_towerPrefab);
-            _towerInstance.transform.position = transform.position;
+            _towerInstance.transform.position = _instanceOffset.position;
         }
         else
         {

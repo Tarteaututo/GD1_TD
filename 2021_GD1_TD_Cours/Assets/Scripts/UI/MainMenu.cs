@@ -16,11 +16,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private Button _quitButton = null;
 
+    [SerializeField]
+    private string _gameSceneName = string.Empty;
+
     // Première méthode : binding dans l'editor avec le Button.OnClick
     public void StartGame()
     {
         // Lancer la scene de game
-        SceneManager.LoadSceneAsync("Game", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(_gameSceneName, LoadSceneMode.Single);
     }
 
     private void OnEnable()

@@ -425,7 +425,7 @@ MonoBehaviour:
   _headTransform: {fileID: 4365909769033100015}
   _canonTransform: {fileID: 4365909770320317198}
   _muzzle: {fileID: 4365909769371171185}
-  _fireRate: 0.5
+  _fireRate: 2
   _projectile: {fileID: 8990660934017387632, guid: e5b3bd0b4875db64cbba82aa3d154c37,
     type: 3}
 --- !u!54 &4365909769157009479

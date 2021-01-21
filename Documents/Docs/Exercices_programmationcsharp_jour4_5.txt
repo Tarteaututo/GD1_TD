@@ -53,8 +53,16 @@ Exercice jour 8 :
 
  OBLIGATOIRE :
  	- Une particle de hit est lancée quand un damageable se prends un dégats
- 	- Une partie de kill est lancée quand un damageable est détruit
+ 	- Une particle de kill est lancée quand un damageable est détruit
 
 Bonus (exemple) :
 	- Si le dégat est supérieur à X (valeur en dur ou relative, par ex à la max health), on lance une particle différentes
 	- Si la vie du damageable est en dessous d'une certaine valeur, déclencher un feedback différent (plusieurs paliers possibles)
+
+
+Exercice jour 9 :
+
+- Modifier la scène Game 
+	- un petit level design avec deux trois slots de tours, un chemin qui passe à côté, un spawner au bout de ce chemin
+	- la base du joueur au bout du chemin, contenant des points de vie, point de vie qui sont réduits quand un actor rentre dans son trigger
+	- Ajouter une barre de vie joueur dans le HUD 
