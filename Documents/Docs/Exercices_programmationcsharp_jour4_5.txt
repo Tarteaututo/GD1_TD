@@ -66,3 +66,24 @@ Exercice jour 9 :
 	- un petit level design avec deux trois slots de tours, un chemin qui passe à côté, un spawner au bout de ce chemin
 	- la base du joueur au bout du chemin, contenant des points de vie, point de vie qui sont réduits quand un actor rentre dans son trigger
 	- Ajouter une barre de vie joueur dans le HUD 
+
+
+- Ajouter un système économique :
+	- Un manager qui détient les données courante (combien d'argent j'ai, etcf...)
+	- Un HUD qui affiche la thune
+	- Des actors qui donne de l'argent au joueur quand il est détruit
+	- Des tower pickers qui dépensent de l'argent quand une tour est construite
+
+	Pour vous aider :
+		- Pensez "manager unique et accessible par tous le monde". LevelReference.Instance.VotreManagerDeSystèmeEco
+		- Éventuellement utiliser des events !
+
+
+
+
+A faire ensemble : 
+
+	- Camera billboard health bar
+	- Système eco
+	- hud selection tower
+	- feedback range tower

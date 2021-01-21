@@ -5,6 +5,9 @@ using UnityEngine;
 public class TowerSlotPickable : Pickable
 {
     [SerializeField]
+    private int _cost = 5;
+
+    [SerializeField]
     private Tower _towerPrefab = null;
 
     [SerializeField]
@@ -14,11 +17,17 @@ public class TowerSlotPickable : Pickable
 
     public override void Pick(RaycastHit hit)
     {
+        if (LevelReferences.Instance.EconomyManager.CanBuy(-_cost) == false)
+        {
+            Debug.LogFormat("{0}.Pick() can't buy !", GetType().Name);
+            return;
+        }
         Debug.LogFormat("{0}.Pick() {1} is been picked.", GetType().Name, gameObject.name);
 
 
         // Si je n'ai pas de tour
-        if (_towerInstance == null)
+        if (_towerInstance == null &&
+            LevelReferences.Instance.EconomyManager.TryAddOrRemoveMoney(-_cost) == true)
         {
             // créer une tour et s'en rappeler
             _towerInstance = Instantiate(_towerPrefab);

@@ -7,6 +7,14 @@ public class LevelReferences : MonoBehaviour
     #region Singleton
     private static LevelReferences _instance = null;
 
+    public static bool HasInstance
+    {
+        get
+        {
+            return _instance != null;
+        }
+    }
+
     public static LevelReferences Instance
     {
         get
@@ -43,9 +51,14 @@ public class LevelReferences : MonoBehaviour
     [SerializeField]
     private GameManager _gameManager = null;
 
+    [SerializeField]
+    private EconomyManager _economyManager = null;
+
     public EndGameMenu EndGameMenu => _endGameMenu;
     public GameManager GameManager => _gameManager;
     public Camera Camera => _camera;
+    public EconomyManager EconomyManager => _economyManager;
+
     //public Camera Camera
     //{
     //    get

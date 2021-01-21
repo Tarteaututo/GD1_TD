@@ -160,7 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceee66d527624474ea2340a49c5d75db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!1 &1894138072
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +587,7 @@ GameObject:
   - component: {fileID: 6917007306712104210}
   - component: {fileID: 6917007306712104211}
   - component: {fileID: 2769797989875581744}
+  - component: {fileID: 21677461622869436}
   m_Layer: 0
   m_Name: Actor
   m_TagString: Untagged
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponController: {fileID: 6917007306712104209}
   _destination: []
-  _speed: 4
+  _speed: 5
   _destinationThreshold: 0.1
   _state: 0
   _idleDuration: 0
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 1734897261}
-  _health: 2
+  _health: 3
   _offset: {fileID: 6917007305744247466}
   _destroyIfHealthBelowZero: 1
 --- !u!114 &2769797989875581744
@@ -700,6 +700,20 @@ MonoBehaviour:
   _hitParticle: {fileID: 6950405742498050117, guid: b1789e7a75ce8a6499dd919e4f85305a,
     type: 3}
   _damageable: {fileID: 6917007306712104211}
+--- !u!114 &21677461622869436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917007306712104222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d09e17270ef5c34985a1d7cca74f0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventType: 3
+  _amount: 2
 --- !u!1 &6917007306879910142
 GameObject:
   m_ObjectHideFlags: 0

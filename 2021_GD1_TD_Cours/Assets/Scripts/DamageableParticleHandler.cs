@@ -28,14 +28,14 @@ public class DamageableParticleHandler : MonoBehaviour
 
     private void OnHealthChanged(Damageable sender, int previousHealth, int currentHealth, int maxHealth)
     {
-        Debug.LogFormat(
-            "{0} : {1} [previousHealth:{2}] [currentHealth:{3}] [maxHealth:{4}]", 
-            GetType().Name, 
-            sender.GetType().Name, 
-            previousHealth, 
-            currentHealth, 
-            maxHealth
-        );
+        //Debug.LogFormat(
+        //    "{0} : {1} [previousHealth:{2}] [currentHealth:{3}] [maxHealth:{4}]", 
+        //    GetType().Name, 
+        //    sender.GetType().Name, 
+        //    previousHealth, 
+        //    currentHealth, 
+        //    maxHealth
+        //);
 
         // Est ce que je me suis pris un dégat ?
         if (currentHealth < previousHealth)

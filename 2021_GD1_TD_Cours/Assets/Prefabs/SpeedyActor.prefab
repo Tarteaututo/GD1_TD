@@ -587,6 +587,7 @@ GameObject:
   - component: {fileID: 6917007306712104210}
   - component: {fileID: 6917007306712104211}
   - component: {fileID: 2769797989875581744}
+  - component: {fileID: 8948067293802282792}
   m_Layer: 0
   m_Name: SpeedyActor
   m_TagString: Untagged
@@ -631,7 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponController: {fileID: 6917007306712104209}
   _destination: []
-  _speed: 6
+  _speed: 7
   _destinationThreshold: 0.1
   _state: 0
   _idleDuration: 0
@@ -699,6 +700,20 @@ MonoBehaviour:
   _hitParticle: {fileID: 6950405742498050117, guid: b1789e7a75ce8a6499dd919e4f85305a,
     type: 3}
   _damageable: {fileID: 6917007306712104211}
+--- !u!114 &8948067293802282792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917007306712104222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d09e17270ef5c34985a1d7cca74f0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventType: 3
+  _amount: 3
 --- !u!1 &6917007306879910142
 GameObject:
   m_ObjectHideFlags: 0

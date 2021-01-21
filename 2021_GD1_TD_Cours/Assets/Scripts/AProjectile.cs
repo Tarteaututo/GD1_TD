@@ -17,7 +17,7 @@ public abstract class AProjectile : MonoBehaviour
         {
             OnDamageableFound(damageable);
         }
-        Debug.Log("AProjectile.OnCollisionEnter");
+        //Debug.Log("AProjectile.OnCollisionEnter");
     }
 
     protected virtual void Update()
