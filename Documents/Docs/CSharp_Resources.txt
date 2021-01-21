@@ -1,0 +1,48 @@
+Ressources intéressantes :
+
+Tuto / texte : 
+	- CatLikeCoding : programmation AVANCÉE, une fois que vous avez une certaine compréhension général de la syntaxe et du contexte Unity, c'est la meilleure ressource pour apprendre à faire des trucs.
+		- https://catlikecoding.com/unity/tutorials/
+			- Pour commencer, le tuto Curve / Spline est très intéressant : 
+				https://catlikecoding.com/unity/tutorials/curves-and-splines/
+
+	- Jon Skeet : Pour aller VRAIMENT plus loin dans la programmation, c'est	un mec lambda qui s'est donné pour mission de répondre à TOUTES les questions C# sur stack overflow, c'est devenu une légende et la référence dans le milieu
+		- https://codeblog.jonskeet.uk/
+		- https://stackoverflow.com/users/22656/jon-skeet
+
+	- Alan Zucconi : PAYANT, mais c'est la meilleure ressource en terme de "facilité dans un niveau avancée", très bien expliquée mais derrière un paywall.
+		- https://www.alanzucconi.com/tutorials/
+
+	- The Knight Of Unity : un peu de tout, il s'agit d'un studio qui a un blog publique qui explique des trucs. Ça peut être aussi général que la gestion acquisition / monetisation / rétention d'un jeu mobile (son design ou son implémentation), ou bien des tricks comme l'usage des RenderTexture.
+		- https://blog.theknightsofunity.com/
+
+	- Jackson Dunstan : HAUT NIVEAU, mais la ressource la plus précise à propos du C#. N'y aller que si vous avez une bonne compréhension du code et que vous cherchez à optimiser.
+		- https://www.jacksondunstan.com/
+
+- Vidéos : 
+	- Sebastian Lague : pour rêver un peu, le code fait par un mathématicien
+		- https://www.youtube.com/user/Cercopithecan
+
+	- Infallible Code : pour décompresser / ne pas avoir du code, des concepts avancées expliqué très simplement, et pourtant de manière très propre (coucou brakeys)
+		- https://www.youtube.com/c/InfallibleCode/videos
+
+	- Jason Weimann : Pour de la culture autour du code en général
+		- https://www.youtube.com/c/Unity3dCollege/videos
+
+			- Freya Holmér : Codeuse de ShaderForge / Shapes, a crée son studio et à fait (entre autres) Budget Cuts. Est prof de programmation / mathématique et laisse ses cours en accès libre (des bons 6h de vidéos bien touffues). Très très bonne ressources.
+		- https://www.youtube.com/c/Acegikmo/videos
+
+	3Blue1Brown : Culture générale des mathématiques et explication (attention, de haut niveau) de choses complexes comme les Quaternions.
+		- https://www.youtube.com/c/3blue1brown/videos
+
+
+
+
+Des devblog intéressants : 
+
+	- Cliffsky : créateur de la série Democracy et Production Line, un one man army (un vrai tueur) qui fait tout from scratch et explique des tas de choses dessus.
+		- https://www.positech.co.uk/cliffsblog
+
+	- Shining Rock Software : créateur de Banished et one man army, fait tout (modé / code / musique / gd).
+		- http://www.shiningrocksoftware.com/
+

@@ -18,7 +18,11 @@ public class EconomyManager : MonoBehaviour
     #region Properties
     public int Money
     {
-        get => _money;
+        //get => _money;
+        get
+        {
+            return _money;
+        }
         private set
         {
             _money = value;
