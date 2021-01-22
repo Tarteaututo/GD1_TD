@@ -22,6 +22,9 @@ public class Timer
 
     private bool _isRunning = false;
 
+    public delegate void TimerEvent();
+    public event TimerEvent Stopped = null;
+    
     // Constructor
     public Timer(float duration)
     {
@@ -51,6 +54,11 @@ public class Timer
     {
         _currentDuration = 0;
         _isRunning = false;
+        Stopped?.Invoke();
+        //if (Stopped != null) // Strictement égal à Stopped?.Invoke();
+        //{
+        //    Stopped.Invoke();
+        //}
     }
 
     public bool Update()
