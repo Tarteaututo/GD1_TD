@@ -51,6 +51,9 @@ public class Actor : MonoBehaviour
     [SerializeField]
     private float _movementEffectFactor = 1f;
 
+    [SerializeField]
+    private float _slowFactor = 0.5f;
+
     private Timer _movementTimer = null;
 
     private Timer _effectTimer = null;
@@ -76,6 +79,7 @@ public class Actor : MonoBehaviour
                 break;
             case EffectState.Slow:
                 {
+                    _movementEffectFactor = _slowFactor;
                 }
                 break;
             case EffectState.DoT:
@@ -103,6 +107,7 @@ public class Actor : MonoBehaviour
                 break;
             case EffectState.Slow:
                 {
+                    _movementEffectFactor = 1f;
                 }
                 break;
             case EffectState.DoT:
